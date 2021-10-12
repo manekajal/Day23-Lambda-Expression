@@ -54,6 +54,24 @@ public class RegexLambdaExpression {
 
         System.out.println("Last Name Pattern :" +regex.details("Mane"));
 
+        System.out.println();
+
+        regex=(input) -> {
+            String pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+            Pattern r = Pattern.compile(pattern);
+
+            Matcher m = r.matcher(input);
+
+
+            if (m.matches()) {
+                System.out.println(" email Matched :");
+
+            } else {
+                System.out.println("email  No Matched :");
+            }
+            return pattern;
+        };
+        System.out.println("Email Pattern :" +regex.details("manekajal2014@gmail.com"));
 
     }
 }
