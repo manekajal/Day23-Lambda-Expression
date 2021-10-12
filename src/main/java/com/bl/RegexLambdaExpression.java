@@ -73,5 +73,23 @@ public class RegexLambdaExpression {
         };
         System.out.println("Email Pattern :" +regex.details("manekajal2014@gmail.com"));
 
+        System.out.println();
+
+        regex=(input) ->{
+            String pattern = "^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$";
+            Pattern r = Pattern.compile(pattern);
+
+            Matcher m;
+            m = r.matcher(input);
+
+            if (m.matches()) {
+                System.out.println(" Mobile Number is Matched :");
+
+            } else {
+                System.out.println("  Mobile Number is Not Matched :");
+            }
+            return pattern;
+        };
+        System.out.println("Mobile Pattern :" +regex.details("91-9765326068"));
     }
 }
